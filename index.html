@@ -5,10 +5,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Code Chrysalis</title>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <h1 id="title"></h1>
-    <script src="./index.js"></script>
+    <div class="container">
+      <div class="top">
+        <div class="title">New Account</div>
+      </div>
+      <div class="bottom">
+        <form action="post" id="userForm" novalidate>
+          <div class="name inputBlock">
+            <label for="nameInput">Name</label>
+            <input type="text" id="nameInput" autocomplete="off" required>
+            <span class="error"></span>
+          </div>
+          <div class="email inputBlock">
+            <label for="emailInput">Email</label>
+            <input type="email" id="emailInput" autocomplete="off" required>
+            <span class="error"></span>
+          </div>
+          <div class="password inputBlock">
+            <label for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" autocomplete="off" minlength="12" pattern="(?=^.{12,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+            <span class="error"></span>
+          </div>
+          <div class="passwordConfirm inputBlock">
+            <label for="passwordConfirmInput">Password (again)</label>
+            <input type="password" id="passwordConfirmInput" autocomplete="off" minlength="12" required>
+            <span class="error"></span>
+          </div>
+          <button type="submit" id="submitForm">Create Account</button>
+          <a href="#" id="signInURL">Already have an account? Sign In</a>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
